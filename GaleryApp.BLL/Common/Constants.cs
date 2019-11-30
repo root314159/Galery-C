@@ -18,7 +18,7 @@ namespace GaleryApp.BLL.Common
 
         public static Dictionary<int, string> ERROR_CODES = new Dictionary<int, string>
       {
-          {0,"Fail" },
+          {0,"Success" },
           {1,"Username or password is invalid" },
           {2,"System error please call your manager!!" }
 

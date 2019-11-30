@@ -18,7 +18,7 @@ namespace GaleryApp.BLL.Concrete
         //user deposu
         private IEFRepository<User> _userRepo;
         private IUnitOfWork _unitOfWork;
-
+        public User _user;
 
 
         public AccountService()
@@ -40,7 +40,7 @@ namespace GaleryApp.BLL.Concrete
 
                 if (user == null)
                 {
-                    response.SetError(Common.Constants.ERROR_ENUMS.INVALID_USERNAME_OR_PASSWORD);
+                    response.SetState(Common.Constants.ERROR_ENUMS.INVALID_USERNAME_OR_PASSWORD);
                     return response;
 
                 }
@@ -52,29 +52,31 @@ namespace GaleryApp.BLL.Concrete
                 //    IsDeleted = false
                 //});
 
-                int result = _unitOfWork.SaveChanges();
+                //int result = _unitOfWork.SaveChanges();
 
-                if (result == 0)
-                {
-                    response.SetError(Common.Constants.ERROR_ENUMS.SYSTEM);
-                    return response;
-                }
+                //if (result == 0)
+                //{
+                //    response.SetError(Common.Constants.ERROR_ENUMS.SYSTEM);
+                //    return response;
+                //}
 
-                response.UserName = user.Name;
+                //response.UserName = user.Name;
                 //response.Token = _token;
+                response.User = user;
 
             }
             catch (Exception ex)
             {
                 //hatayı loglamam lazım
-
-                response.SetError(Common.Constants.ERROR_ENUMS.SYSTEM);
-                return response;
+                
+                response.SetState(Common.Constants.ERROR_ENUMS.SYSTEM);
+                //return response;
+                throw ex;
 
             }
 
 
-            response.SetError(Common.Constants.ERROR_ENUMS.SUCCESS);
+            response.SetState(Common.Constants.ERROR_ENUMS.SUCCESS);
             return response;
         }
     }

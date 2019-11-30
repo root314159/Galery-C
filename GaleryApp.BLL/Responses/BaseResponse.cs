@@ -13,7 +13,7 @@ namespace GaleryApp.BLL.Responses
 
         public string Messeage { get; set; }
 
-        public void SetError(Constants.ERROR_ENUMS code)
+        public void SetState(Constants.ERROR_ENUMS code)
         {
             this.Code = (int)code;
             this.Messeage = Constants.ERROR_CODES[(int)code];

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GaleryApp.Core.DomainClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace GaleryApp.BLL.Responses
     public class LoginResponse : BaseResponse
     {
         //public string Token { get; set; }
-        public string UserName { get; set; }
+        //public string UserName { get; set; }
+        public User User { get; set; }
     }
 }
