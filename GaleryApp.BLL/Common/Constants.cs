@@ -12,7 +12,8 @@ namespace GaleryApp.BLL.Common
         {
             SUCCESS,
             INVALID_USERNAME_OR_PASSWORD,
-            SYSTEM
+            SYSTEM,
+            NO_RECORD
 
         }
 
@@ -20,8 +21,8 @@ namespace GaleryApp.BLL.Common
       {
           {0,"Success" },
           {1,"Username or password is invalid" },
-          {2,"System error please call your manager!!" }
-
+          {2,"System error please call your manager!!" },
+          {3,"There is no record." }
       };
 
 

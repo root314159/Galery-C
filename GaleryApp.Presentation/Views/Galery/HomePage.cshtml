@@ -1,4 +1,4 @@
-﻿@model GaleryApp.Core.DomainClasses.User
+﻿@model GaleryApp.Presentation.Models.UserPhotoModel
 @{
     Layout = null;
 }
@@ -18,7 +18,7 @@
 <body>
 
     <div style="height:100px;width:100%;background-color:black;position:absolute">
-        @if (Model == null)
+        @if (Model.User == null)
         {
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -37,8 +37,8 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <input type="text" name="Name" placeholder="Name" />
-                                <input type="password" name="Password" placeholder="Password" />
+                                <input type="text" name="name" placeholder="Name" />
+                                <input type="password" name="password" placeholder="Password" />
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -51,9 +51,22 @@
         }
         else
         {
-            <strong>Wellcome @Model.Name</strong>
+            <strong>Wellcome @Model.User.Name</strong>
         }
 
+    </div>
+    <div class="container">
+        @foreach (var item in Model.Photos)
+        {
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        }
     </div>
 </body>
 </html>

@@ -11,12 +11,12 @@ namespace GaleryApp.BLL.Responses
     {
         public int Code { get; set; }
 
-        public string Messeage { get; set; }
+        public string Message { get; set; }
 
         public void SetState(Constants.ERROR_ENUMS code)
         {
             this.Code = (int)code;
-            this.Messeage = Constants.ERROR_CODES[(int)code];
+            this.Message = Constants.ERROR_CODES[(int)code];
 
         }
     }

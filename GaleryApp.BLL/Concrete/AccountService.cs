@@ -70,11 +70,10 @@ namespace GaleryApp.BLL.Concrete
                 //hatayı loglamam lazım
                 
                 response.SetState(Common.Constants.ERROR_ENUMS.SYSTEM);
-                //return response;
-                throw ex;
+                return response;
+                
 
             }
-
 
             response.SetState(Common.Constants.ERROR_ENUMS.SUCCESS);
             return response;

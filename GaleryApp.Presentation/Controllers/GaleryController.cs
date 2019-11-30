@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using GaleryApp.BLL.Common;
 using GaleryApp.BLL.Concrete;
 using GaleryApp.BLL.Responses;
+using GaleryApp.Presentation.Models;
 
 namespace GaleryApp.Presentation.Controllers
 {
@@ -14,6 +15,7 @@ namespace GaleryApp.Presentation.Controllers
         // GET: Galery
         public ActionResult HomePage()
         {
+           
             return View();
         }
         public ActionResult AboutMe()
@@ -21,14 +23,20 @@ namespace GaleryApp.Presentation.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult HomePage(string Name, string Password)
+        public ActionResult HomePage(string name, string password)
         {
+            UserPhotoModel model = new UserPhotoModel();
             AccountService service = new AccountService();
-            LoginResponse response = service.Login(Name, Password);
+            LoginResponse response = service.Login(name, password);
+            model.User = response.User;
+
+            PhotoService photoService = new PhotoService();
+            PhotoResponse photoResponse = photoService.GetPhotos(response.User);
+            model.Photos = photoResponse.Photos;
             if (response.Code ==(int)Constants.ERROR_ENUMS.SUCCESS)
             {
                 //ViewBag.Message = "Success";
-                return View(response.User);
+                return View(model);
             }
             return View();
         }

@@ -49,11 +49,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAccountService.cs" />
+    <Compile Include="Abstract\IPhotoService.cs" />
     <Compile Include="Common\Constants.cs" />
     <Compile Include="Concrete\AccountService.cs" />
+    <Compile Include="Concrete\PhotoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Responses\BaseResponse.cs" />
     <Compile Include="Responses\LoginResponse.cs" />
+    <Compile Include="Responses\PhotoResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
