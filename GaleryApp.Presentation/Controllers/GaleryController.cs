@@ -41,7 +41,7 @@ namespace GaleryApp.Presentation.Controllers
             if (response.Code ==(int)Constants.ERROR_ENUMS.SUCCESS)
             {
                 //ViewBag.Message = "Success";
-                return View(model);
+                return PartialView("PhotoPage",model);
             }
             return View();
         }

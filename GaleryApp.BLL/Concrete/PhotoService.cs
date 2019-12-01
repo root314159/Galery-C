@@ -42,8 +42,8 @@ namespace GaleryApp.BLL.Concrete
                 //hatayı loglamam lazım
 
                 response.SetState(Common.Constants.ERROR_ENUMS.SYSTEM);
-                //return response;
-                throw ex;
+                return response;
+                //throw ex;
             }
             response.SetState(Common.Constants.ERROR_ENUMS.SUCCESS);
             return response;
