@@ -13,6 +13,11 @@ namespace GaleryApp.Presentation.Controllers
     public class GaleryController : Controller
     {
         // GET: Galery
+        public ActionResult PhotoPage()
+        {
+
+            return View();
+        }
         public ActionResult HomePage()
         {
            
