@@ -126,6 +126,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\GaleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -140,6 +141,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Login.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -398,7 +400,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Galery\AboutMe.cshtml" />
-    <Content Include="Views\Galery\HomePage.cshtml" />
+    <Content Include="Views\Account\HomePage.cshtml" />
     <Content Include="Views\Galery\PhotoPage.cshtml" />
     <Content Include="Template\bootstrap-4.4.1\.browserslistrc" />
     <Content Include="Template\bootstrap-4.4.1\.editorconfig" />
@@ -656,6 +658,8 @@
     <Content Include="Template\bootstrap-4.4.1\site\_includes\callout-info-prefersreducedmotion.md" />
     <Content Include="Template\bootstrap-4.4.1\site\_includes\callout-warning-color-assistive-technologies.md" />
     <Content Include="Template\bootstrap-4.4.1\_config.yml" />
+    <Content Include="Views\Shared\_PartialHeaderFooter.cshtml" />
+    <Content Include="Views\Shared\_PartialHeader.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
