@@ -17,18 +17,32 @@ namespace GaleryApp.Presentation.Controllers
 
         public ActionResult PhotoPage()
         {
-            
+
             PhotoService photoService = new PhotoService();
+            Session["page"] = 1;
             UserPhotoModel model = (UserPhotoModel)Session["model"];
             PhotoResponse photoResponse = photoService.GetPhotos(model.User);
             model.Photos = photoResponse.Photos;
-            
-            if (photoResponse.Code ==(int)Constants.ERROR_ENUMS.SUCCESS)
+
+            if (photoResponse.Code == (int)Constants.ERROR_ENUMS.SUCCESS)
             {
-                
+
                 return View(model);
             }
             return View();
+        }
+        
+        public ActionResult PhotoPrint()
+        {
+            Session["page"] = (int)Session["page"] + 1; 
+            PhotoService photoService = new PhotoService();
+            UserPhotoModel model = (UserPhotoModel)Session["model"];
+            PhotoResponse response = photoService.GetPhotosPartByPart(model.User, (int)Session["page"]);
+            model.Photos = response.Photos;
+            return PartialView("PhotoPage",model);
+            
+
+
         }
     }
 }
