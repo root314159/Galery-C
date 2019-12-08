@@ -52,6 +52,7 @@ namespace GaleryApp.BLL.Concrete
         {
             PhotoResponse response = new PhotoResponse();
             int index = page * count;
+            
             try
             {
                 var photos = _photoRepo.Get().Where(t => t.UserID == user.ID).Take(index).ToList();

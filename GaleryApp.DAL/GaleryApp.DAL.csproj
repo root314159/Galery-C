@@ -57,6 +57,10 @@
     <Compile Include="Migrations\201911301245517_mig2.Designer.cs">
       <DependentUpon>201911301245517_mig2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912081706585_mig3.cs" />
+    <Compile Include="Migrations\201912081706585_mig3.Designer.cs">
+      <DependentUpon>201912081706585_mig3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\EFRepository.cs" />
@@ -84,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911301245517_mig2.resx">
       <DependentUpon>201911301245517_mig2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912081706585_mig3.resx">
+      <DependentUpon>201912081706585_mig3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
