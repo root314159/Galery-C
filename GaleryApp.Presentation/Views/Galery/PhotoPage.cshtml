@@ -11,16 +11,16 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.6">
+    <meta name="msapplication-config" content="~/Template/bootstrap-4.4.1/docs/4.4/assets/img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#563d7c">
 
     <title>Album example · Bootstrap</title>
 
     <link href="~/Content/album.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    @*<link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">*@
-
+    <link href="~/Template/bootstrap-4.4.1/dist/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Bootstrap core CSS -->
-    @*<link href="~/Template/bootstrap-4.4.1/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">*@
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="~/Template/bootstrap-4.4.1/docs/4.4/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -30,21 +30,11 @@
     <link rel="mask-icon" href="~/Template/bootstrap-4.4.1/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
     <link rel="icon" href="~/Template/bootstrap-4.4.1/docs/4.4/assets/img/favicons/favicon.ico">
 
-    <meta name="msapplication-config" content="~/Template/bootstrap-4.4.1/docs/4.4/assets/img/favicons/browserconfig.xml">
-    <meta name="theme-color" content="#563d7c">
-
-    @*<script src="~/Scripts/jquery-3.3.1.js"></script>
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>*@
-    @*<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>*@
-    @*<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>*@
-
-    @*<script src="~/Template/bootstrap-4.4.1/dist/js/bootstrap.min.js"></script>*@
-
-
-    <link href="~/Template/bootstrap-4.4.1/dist/css/bootstrap.min.css" rel="stylesheet" />
-
     <script src="~/Scripts/jquery-3.3.1.js"></script>
     <script src="~/Template/bootstrap-4.4.1/dist/js/bootstrap.bundle.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Custom styles for this template -->
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -85,13 +75,12 @@
             background: #2ecc71;
         }
     </style>
-    <!-- Custom styles for this template -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
     <script>
-        
+
         $(function () {
-           
+
             $(".more").click(function () {
 
                 var count = $(".pageno").val();
@@ -102,7 +91,7 @@
                     //contentType: "application/json;charset=utf-8",
                     success: function (d) {
                         $("body").html(d);
-                        count ++;
+                        count++;
                         $(".pageno").val(count);
                         console.log(40);
                     }, error: function () {
@@ -112,7 +101,6 @@
                 });
             });
         });
-
 
     </script>
 
@@ -136,17 +124,12 @@
 
                 <div class="row">
 
-
-
                     @if (Model != null)
                     {
                         if (Model.Photos.Count != 0)
                         {
                             foreach (var item in Model.Photos)
                             {
-
-
-
 
                                 <div class="col-md-4">
                                     <div class="card mb-4 shadow-sm">
@@ -164,14 +147,11 @@
                                     </div>
                                 </div>
 
-
-
                             }
 
                             <div style="width:100%">
                                 <button class="more" type="submit">more</button>
                             </div>
-
 
                         }
                         else
@@ -186,12 +166,6 @@
         </div>
 
     </main>
-
-
-    @*<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>*@
-    @*<script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>*@
-    @*<script src="/docs/4.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>*@
-
 
 </body>
 </html>

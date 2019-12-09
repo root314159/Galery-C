@@ -19,11 +19,11 @@ namespace GaleryApp.Presentation.Controllers
         }
         // GET: Account
         [HttpPost]
-        public ActionResult HomePage(string Name, string Password)
+        public ActionResult HomePage(User user)
         {
             UserPhotoModel model = new UserPhotoModel();
             AccountService service = new AccountService();
-            LoginResponse response = service.Login(Name, Password);
+            LoginResponse response = service.Login(user.Name, user.Password);
             model.User = response.User;
             Session["model"] = model;
             if(response.Code == (int)Constants.ERROR_ENUMS.SUCCESS)
@@ -32,12 +32,7 @@ namespace GaleryApp.Presentation.Controllers
                 return RedirectToAction("PhotoPage", "Galery");
 
             }
-            if (model.User == null)
-            {
-                model.User = new User();
-                return View(model.User);
-            }
-            return View();
+            return View(model);
         }
     }
 }

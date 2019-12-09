@@ -10,7 +10,7 @@ namespace GaleryApp.Core.DomainClasses
     public class BaseEntity
     {
         public int ID { get; set; }
-        [Required(ErrorMessage ="bu alan gerekli")]
+        [Required(ErrorMessage = "This filed is necessary!")]
         public string Name { get; set; }
         public bool IsDeleted { get; set; }
     }

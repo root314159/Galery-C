@@ -13,7 +13,7 @@ namespace GaleryApp.Core.DomainClasses
         {
             Photos = new List<Photo>();
         }
-        [Required(ErrorMessage ="bu alan gerekli")]
+        [Required(ErrorMessage ="This filed is necessary!")]
         public string Password { get; set; }
         public virtual ICollection<Photo> Photos { get; set; }
     }
