@@ -13,11 +13,16 @@ namespace GaleryApp.Presentation.Controllers
 {
     public class AccountController : Controller
     {
+        // GET: Account
         public ActionResult HomePage()
         {
             return View();
         }
-        // GET: Account
+        public ActionResult RegisterPage()
+        {
+            return View();
+        }
+ 
         [HttpPost]
         public ActionResult HomePage(User user)
         {
